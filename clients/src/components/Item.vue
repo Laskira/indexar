@@ -9,7 +9,8 @@
   
 <style>
 .cardItem {
-  @apply w-64 p-4 mr-4 my-4 box-border bg-slate-100 rounded-lg h-40 hover:bg-cyan-100
+  @apply p-4 mr-4 my-4 box-border bg-slate-100 rounded-lg  hover:bg-cyan-100
+  /*  w-64 h-40 */
 }
 
 .itemTitle{

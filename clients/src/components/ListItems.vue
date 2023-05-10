@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <input type="text" v-model="searchValue" placeholder="Search">
+    <button>Search</button>
+  </div>
   <ul class="responsive">
     <li v-for="(itemData, key) in items" :key="key">
       <item :itemKey="key" :itemData="itemData" />
@@ -22,12 +26,21 @@ export default defineComponent({
   components: {
     Item,
   },
+  data() {
+    return {
+      searchValue: '',
+    };
+  },
   setup() {
     const items = ref([]);
 
-    axios.get('http://localhost:3000/database')
+    axios.get('http://localhost:3000')
       .then(response => {
-        items.value = response.data.enron_mail.mappings.properties;
+        // items.value = response.datas.hits.hits[0]._source;
+        const hits = response.data.hits.hits;
+        for (const hit of hits) {
+          items.value = hit._source;
+        }
       })
       .catch(error => {
         console.error(error);

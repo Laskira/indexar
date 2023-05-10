@@ -14,7 +14,7 @@ func StartRouting() {
 	r.Use(corsMiddleware)
 
 	//Request to get the zincsearch data
-	r.Get("/database", request.MappingRequest)
+	r.Get("/", request.DataRequest)
 
 	fmt.Println("localhost running on port 3000")
 	http.ListenAndServe(":3000", r)

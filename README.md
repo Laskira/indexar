@@ -3,8 +3,8 @@
 
 ### Backend
 - cd server
-- go run main.go enron_mail - Name of the folder that will be uploaded to zinc search
-
+- go run main.go database - Name of the folder that will be uploaded to zinc search
+<!-- Mark_McConnell_June2001 -->
 ### Frontend
 cd frontend
 npm run serve

@@ -13,3 +13,9 @@ func ErrorWhatShowAWarning(err error) {
 		log.Fatal(err.Error())
 	}
 }
+
+func ErrorWhatReturnAMessage(message string, err error) {
+	if err != nil {
+		log.Fatal(message, err)
+	}
+}
